@@ -1,9 +1,9 @@
 #!/bin/bash
 ID=$(id -u)
-RED="\e[31m"
-GREEN="\e[32m"
-YELLOW="\e[33m"
-NORMAL="\e[0m"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
@@ -17,7 +17,7 @@ VALIDATE (){
 then
     echo -e "$R ERROR: Installing $2 failed $N"
 else
-    echo "$G installing $2 sucess $N"
+    echo -e "$G installing $2 sucess $N"
 fi
 }
 
@@ -26,7 +26,7 @@ then
    echo -e "$R ERROE: please run with root user $N"
    exit 1
 else
-    echo "$G you are root user $N"
+    echo -e "$G you are root user $N"
 fi
 yum install mysql -y  &>> $LOGFILE
 VALIDATE $?  "installing mysql"
