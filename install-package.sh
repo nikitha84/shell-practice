@@ -19,7 +19,7 @@ VALIDATE(){
     fi        
 }
 
-if [ $ID -ne 0 ]
+if [ $ID -ne 0 ];
 then
     echo -e "$R ERROR: please run with root user $N"
     exit 1
@@ -27,7 +27,7 @@ else
     echo -e "$G you are root user $N"
 fi
 
-for $package in $@
+for package in $@
 do
     yum list installed $package &>> $LOGFILE
     if [ $? -ne 0 ]
