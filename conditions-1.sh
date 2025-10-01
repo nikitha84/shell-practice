@@ -16,7 +16,17 @@ then
     exist 1
 else
     echo "Installing Mysql suscess"
-fi   
+fi  
+
+yum install git -y
+
+if [ $? -ne 0 ]
+then
+    echo "ERROR: Installing git failed"
+    exist 1
+else
+    echo "Installing git suscess"
+fi
 
 
 
