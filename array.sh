@@ -1,7 +1,7 @@
 #!/bin/bash
 
-FRUTES=("Apple" "Banana" "Grep")
-echo "First value is: {$FRUTES[0]}"
-echo "First value is: {$FRUTES[1]}"
-echo "First value is: {$FRUTES[2]}"
+FRUITS=("Apple" "Banana" "Grep")
+echo "First value is: {$FRUITS[0]}"
+echo "First value is: {$FRUITS[1]}"
+echo "First value is: {$FRUITS[2]}"
 #echo "ALL Fruit is : {$FRUITES[@]}"
