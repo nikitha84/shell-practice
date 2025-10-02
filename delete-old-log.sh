@@ -4,7 +4,7 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 
-SOURCE_DIR="/tmp/shell-script-logs"
+SOURCE_DIR="/tmp/shellscript-logs"
 
 if [ ! -d $SOURCE_DIR ];     #! = Negates the condition. -d directory
 then
