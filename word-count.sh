@@ -1,16 +1,6 @@
-# #!/bin/bash
 
-# file_name=$1
 
-# if [ ! -f $file_name ]
-# then
-#    echo "file not exist"
-#    exit=1
-# else
-#     echo "file available"
-# fi
-
-# #!/bin/bash
+#!/bin/bash
 
 # File to read
 file_name="your_file.txt"
