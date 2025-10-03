@@ -31,7 +31,7 @@ available_memory=$(free -m | awk 'NR==2 {print $7}')
 free_mem_percent=$(( available_memory * 100 / total_memory ))
 
 if [ "$free_mem_percent" -lt "$threshold" ]; then
-    echo "ALERT: Free memory is below ${threshold}%"  
+    echo "ALERT: Free memory is below ${threshold}% (Current: ${free_mem_percent}%)" \
     | mail -s "Memory Alert on $(hostname)" susmitha84640@example.com
 
     
