@@ -24,3 +24,17 @@ do
     echo "Deleted the file: $logfile"
 done <<< $FILES_TO_DELETE
 
+# or
+# if [ -z "$FILES_TO_DELETE" ]; then    
+#     echo "No files older than 14 days to delete."
+#   else
+#     while IFS= read -r filepath; do
+#       # Process each line here
+#       echo "Deleting file: $filepath"
+#       rm -f $filepath
+#       echo "Deleted file: $filepath"
+#     done <<< $FILES_TO_DELETE
+# fi
+#if $FILES_TO_DELETE" empty exit with error 
+#if exist delete files
+
