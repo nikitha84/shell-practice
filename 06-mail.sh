@@ -15,12 +15,12 @@ echo "$FINAL_BODY"
 } | msmtp "$TO_ADDRESS"
 
 
-Hi, TO_TEAM #(Devops team)
-There is an ALERT_TYPE in the system IP_ADDRESS. Please find the detailes below
+# Hi, TO_TEAM #(Devops team) conver into html 
+# There is an ALERT_TYPE in the system IP_ADDRESS. Please find the detailes below
 
-MESSAGE
-Regards,
-Monitoring team
+# MESSAGE
+# Regards,
+# Monitoring team
 
 # {
 # echo "To: $TO_ADDRESS #devopsteam84640@gmail.com"
