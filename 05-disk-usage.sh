@@ -1,18 +1,19 @@
 #!/bin/bash
 DISK_USAGE=$(df -hT | grep -v Filesystem)
 DISK_THRESHOLD=2
-IP_ADDRESS=$(curl -s curl http://169.254.169.254/latest/meta-data/local-ipv4)
+IP_ADDRESS=$(curl -s http://169.254.169.254/latest/meta-data/local-ipv4)
 
 MESSAGE=""
 
 while IFS= read -r line
 do
-    USAGE=$(echo  $line | aws '{print $6}' | cut -d "%" -f1)
-    PARTITION=$(echo $line | aws '{print $7}')
+    USAGE=$(echo  $line | awk '{print $6}' | cut -d "%" -f1)
+    PARTITION=$(echo $line | awk '{print $7}')
     if [ $USAGE -ge $DISK_THRESHOLD ]; then
     #echo "Hight usage on $PARTITION : $USAGE"
-    MESSAGE+="Hight usage on $PARTITION : $USAGE % <br>" 
-done <<< $DISK_USAGE
+    MESSAGE+="High usage on $PARTITION : $USAGE % <br>" 
+    fi
+done <<< "$DISK_USAGE"
 
 echo -e "Message body=$MESSAGE"
 
